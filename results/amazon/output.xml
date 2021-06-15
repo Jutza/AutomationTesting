@@ -1,0 +1,668 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.0.3 (Python 3.9.5 on win32)" generated="20210614 23:03:32.327" rpa="false" schemaversion="2">
+<suite id="s1" name="Amazon" source="C:\Users\sor_f\Desktop\automation\desktop_test\amazon">
+<suite id="s1-s1" name="searchResult" source="C:\Users\sor_f\Desktop\automation\desktop_test\amazon\searchResult.robot">
+<test id="s1-s1-t1" name="searchOneItemInAllDepartments">
+<kw name="Open Amazon" library="amazon">
+<doc>Open amazon web in the chrome browswer and close pop up messages</doc>
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210614 23:03:32.546" level="INFO">Opening browser 'chrome' to base url 'https://www.amazon.com/'.</msg>
+<status status="PASS" starttime="20210614 23:03:32.546" endtime="20210614 23:03:34.715"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210614 23:03:34.715" endtime="20210614 23:03:34.837"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${header}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210614 23:03:34.837" endtime="20210614 23:03:34.878"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210614 23:03:36.880" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210614 23:03:34.878" endtime="20210614 23:03:36.880"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${present}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${popUp_suggestedCountry}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<arg>${popUp_suggestedCountry}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210614 23:03:37.128" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-12.png"&gt;&lt;img src="selenium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210614 23:03:36.891" endtime="20210614 23:03:37.128"/>
+</kw>
+<msg timestamp="20210614 23:03:37.130" level="FAIL">Element with locator 'xpath=//div[contains(@class, 'glow-toaster-content')]' not found.</msg>
+<status status="FAIL" starttime="20210614 23:03:36.880" endtime="20210614 23:03:37.130"/>
+</kw>
+<msg timestamp="20210614 23:03:37.130" level="INFO">${present} = False</msg>
+<status status="PASS" starttime="20210614 23:03:36.880" endtime="20210614 23:03:37.130"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${present}</arg>
+<arg>Click Element</arg>
+<arg>${popUp_suggestedCountry_closeButton}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20210614 23:03:37.131" endtime="20210614 23:03:37.131"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210614 23:03:38.141" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210614 23:03:37.131" endtime="20210614 23:03:38.141"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${present}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${navBar_shopInEnglish_button}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<arg>${navBar_shopInEnglish_button}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210614 23:03:38.159" level="INFO">Element 'xpath=//a[contains(text (), 'Click here to shop in English')]' is displayed.</msg>
+<status status="PASS" starttime="20210614 23:03:38.141" endtime="20210614 23:03:38.159"/>
+</kw>
+<msg timestamp="20210614 23:03:38.159" level="INFO">${present} = True</msg>
+<status status="PASS" starttime="20210614 23:03:38.141" endtime="20210614 23:03:38.159"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${present}</arg>
+<arg>Set English Language</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Set English Language" library="amazon">
+<doc>when its true, change the language to English</doc>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${navBar_shopInEnglish_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210614 23:03:38.160" level="INFO">Clicking element 'xpath=//a[contains(text (), 'Click here to shop in English')]'.</msg>
+<status status="PASS" starttime="20210614 23:03:38.160" endtime="20210614 23:03:39.077"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${changeLanguage_englishRadioButton}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210614 23:03:39.077" endtime="20210614 23:03:39.100"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${changeLanguage_englishRadioButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210614 23:03:39.101" level="INFO">Clicking element 'xpath=(//span[contains(@class, 'a-radio-label')])[1]'.</msg>
+<status status="PASS" starttime="20210614 23:03:39.101" endtime="20210614 23:03:39.156"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${changeLanguage_saveButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210614 23:03:39.157" level="INFO">Clicking element 'xpath=//input[contains(@class, 'a-button-input')]'.</msg>
+<status status="PASS" starttime="20210614 23:03:39.156" endtime="20210614 23:03:39.896"/>
+</kw>
+<status status="PASS" starttime="20210614 23:03:38.160" endtime="20210614 23:03:39.896"/>
+</kw>
+<status status="PASS" starttime="20210614 23:03:38.160" endtime="20210614 23:03:39.896"/>
+</kw>
+<status status="PASS" starttime="20210614 23:03:32.546" endtime="20210614 23:03:39.896"/>
+</kw>
+<kw name="Input Text In Search Bar" library="amazon">
+<arg>Star Wars</arg>
+<doc>Input text given in the search bar and verify the page result</doc>
+<kw name="Input Text" library="Selenium2Library">
+<arg>${searchBar}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210614 23:03:39.897" level="INFO">Typing text 'Star Wars' into text field 'xpath=//input[contains(@id, 'twotabsearchtextbox')]'.</msg>
+<status status="PASS" starttime="20210614 23:03:39.897" endtime="20210614 23:03:39.972"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${searchBar_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210614 23:03:39.973" level="INFO">Clicking element 'xpath=//input[contains(@id, 'nav-search-submit-button')]'.</msg>
+<status status="PASS" starttime="20210614 23:03:39.972" endtime="20210614 23:03:41.553"/>
+</kw>
+<kw name="Title Should Be" library="Selenium2Library">
+<arg>Amazon.com : ${text}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20210614 23:03:41.578" level="INFO">Page title is 'Amazon.com : Star Wars'.</msg>
+<status status="PASS" starttime="20210614 23:03:41.553" endtime="20210614 23:03:41.578"/>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<arg>${text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20210614 23:03:41.604" level="INFO">Current page contains text 'Star Wars'.</msg>
+<status status="PASS" starttime="20210614 23:03:41.578" endtime="20210614 23:03:41.604"/>
+</kw>
+<status status="PASS" starttime="20210614 23:03:39.896" endtime="20210614 23:03:41.604"/>
+</kw>
+<kw name="Select First Option On Search Result" library="amazon">
+<doc>Click the first option on the search result and verify that the name was the same on both pages</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${searchResult_firstOption}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210614 23:03:41.605" endtime="20210614 23:03:41.623"/>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<var>${searchResult_title}</var>
+<arg>${searchResult_firstOption}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210614 23:03:41.637" level="INFO">${searchResult_title} = Star Wars The Mandalorian Premium Novelty Socks</msg>
+<status status="PASS" starttime="20210614 23:03:41.623" endtime="20210614 23:03:41.637"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${searchResult_firstOption}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210614 23:03:41.638" level="INFO">Clicking element 'xpath=(//a[contains(@class, 'a-text-normal')])[1]'.</msg>
+<status status="PASS" starttime="20210614 23:03:41.637" endtime="20210614 23:03:43.716"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${itemPage_itemTitle}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210614 23:03:43.716" endtime="20210614 23:03:43.748"/>
+</kw>
+<kw name="Element Text Should Be" library="Selenium2Library">
+<arg>${itemPage_itemTitle}</arg>
+<arg>${searchResult_title}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20210614 23:03:43.749" level="INFO">Verifying element 'xpath=//span[contains(@id, 'productTitle')]' contains exact text 'Star Wars The Mandalorian Premium Novelty Socks'.</msg>
+<status status="PASS" starttime="20210614 23:03:43.748" endtime="20210614 23:03:43.764"/>
+</kw>
+<status status="PASS" starttime="20210614 23:03:41.605" endtime="20210614 23:03:43.764"/>
+</kw>
+<kw name="Add To Cart" library="amazon">
+<doc>In the item page, click the "Add to cart" button</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${itemPage_itemTitle}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210614 23:03:43.765" endtime="20210614 23:03:43.786"/>
+</kw>
+<kw name="Get Text" library="Selenium2Library">
+<var>${item_title}</var>
+<arg>${itemPage_itemTitle}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20210614 23:03:43.797" level="INFO">${item_title} = Star Wars The Mandalorian Premium Novelty Socks</msg>
+<status status="PASS" starttime="20210614 23:03:43.786" endtime="20210614 23:03:43.797"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${itemPage_addToCart}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210614 23:03:43.797" endtime="20210614 23:03:43.816"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${itemPage_addToCart}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210614 23:03:43.817" level="INFO">Clicking element 'xpath=//input[contains(@id, 'add-to-cart-button')]'.</msg>
+<status status="PASS" starttime="20210614 23:03:43.816" endtime="20210614 23:03:44.810"/>
+</kw>
+<kw name="Element Text Should Be" library="Selenium2Library">
+<arg>${header_cartItemsCount}</arg>
+<arg>1</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20210614 23:03:44.811" level="INFO">Verifying element 'xpath=//span[contains(@id, 'nav-cart-count')]' contains exact text '1'.</msg>
+<status status="PASS" starttime="20210614 23:03:44.810" endtime="20210614 23:03:44.843"/>
+</kw>
+<kw name="Verify Added item On Cart" library="amazon">
+<arg>${item_title}</arg>
+<doc>verify the item just added to the cart by the name of the recomendations</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${addedToCart_addedMessage}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210614 23:03:44.843" endtime="20210614 23:03:44.859"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${sponsoredTitle}</var>
+<arg>${addedToCart_sponsoredProductsTitle}</arg>
+<arg>_TITLE_</arg>
+<arg>${item_name}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20210614 23:03:44.860" level="INFO">${sponsoredTitle} = xpath=//i[contains(@title, 'Star Wars The Mandalorian Premium Novelty Socks')]</msg>
+<status status="PASS" starttime="20210614 23:03:44.859" endtime="20210614 23:03:44.860"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${sponsoredTitle}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210614 23:03:44.860" endtime="20210614 23:03:44.875"/>
+</kw>
+<status status="PASS" starttime="20210614 23:03:44.843" endtime="20210614 23:03:44.875"/>
+</kw>
+<status status="PASS" starttime="20210614 23:03:43.764" endtime="20210614 23:03:44.875"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210614 23:03:46.880" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210614 23:03:44.875" endtime="20210614 23:03:46.880"/>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210614 23:03:46.880" endtime="20210614 23:03:49.023"/>
+</kw>
+<doc>Search items about the option given, get the first one and added to the cart</doc>
+<status status="PASS" starttime="20210614 23:03:32.545" endtime="20210614 23:03:49.023"/>
+</test>
+<test id="s1-s1-t2" name="sortByCustomerReview">
+<kw name="Open Amazon" library="amazon">
+<doc>Open amazon web in the chrome browswer and close pop up messages</doc>
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210614 23:03:49.025" level="INFO">Opening browser 'chrome' to base url 'https://www.amazon.com/'.</msg>
+<status status="PASS" starttime="20210614 23:03:49.025" endtime="20210614 23:03:51.173"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210614 23:03:51.173" endtime="20210614 23:03:51.293"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${header}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210614 23:03:51.293" endtime="20210614 23:03:51.318"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210614 23:03:53.321" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210614 23:03:51.318" endtime="20210614 23:03:53.321"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${present}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${popUp_suggestedCountry}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<arg>${popUp_suggestedCountry}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210614 23:03:53.574" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-13.png"&gt;&lt;img src="selenium-screenshot-13.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210614 23:03:53.331" endtime="20210614 23:03:53.575"/>
+</kw>
+<msg timestamp="20210614 23:03:53.575" level="FAIL">Element with locator 'xpath=//div[contains(@class, 'glow-toaster-content')]' not found.</msg>
+<status status="FAIL" starttime="20210614 23:03:53.321" endtime="20210614 23:03:53.575"/>
+</kw>
+<msg timestamp="20210614 23:03:53.575" level="INFO">${present} = False</msg>
+<status status="PASS" starttime="20210614 23:03:53.321" endtime="20210614 23:03:53.575"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${present}</arg>
+<arg>Click Element</arg>
+<arg>${popUp_suggestedCountry_closeButton}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20210614 23:03:53.576" endtime="20210614 23:03:53.576"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210614 23:03:54.586" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210614 23:03:53.576" endtime="20210614 23:03:54.586"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${present}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${navBar_shopInEnglish_button}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<arg>${navBar_shopInEnglish_button}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210614 23:03:54.604" level="INFO">Element 'xpath=//a[contains(text (), 'Click here to shop in English')]' is displayed.</msg>
+<status status="PASS" starttime="20210614 23:03:54.586" endtime="20210614 23:03:54.604"/>
+</kw>
+<msg timestamp="20210614 23:03:54.604" level="INFO">${present} = True</msg>
+<status status="PASS" starttime="20210614 23:03:54.586" endtime="20210614 23:03:54.604"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${present}</arg>
+<arg>Set English Language</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Set English Language" library="amazon">
+<doc>when its true, change the language to English</doc>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${navBar_shopInEnglish_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210614 23:03:54.605" level="INFO">Clicking element 'xpath=//a[contains(text (), 'Click here to shop in English')]'.</msg>
+<status status="PASS" starttime="20210614 23:03:54.605" endtime="20210614 23:03:55.459"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${changeLanguage_englishRadioButton}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210614 23:03:55.460" endtime="20210614 23:03:55.479"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${changeLanguage_englishRadioButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210614 23:03:55.480" level="INFO">Clicking element 'xpath=(//span[contains(@class, 'a-radio-label')])[1]'.</msg>
+<status status="PASS" starttime="20210614 23:03:55.480" endtime="20210614 23:03:55.533"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${changeLanguage_saveButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210614 23:03:55.534" level="INFO">Clicking element 'xpath=//input[contains(@class, 'a-button-input')]'.</msg>
+<status status="PASS" starttime="20210614 23:03:55.533" endtime="20210614 23:03:56.257"/>
+</kw>
+<status status="PASS" starttime="20210614 23:03:54.605" endtime="20210614 23:03:56.257"/>
+</kw>
+<status status="PASS" starttime="20210614 23:03:54.604" endtime="20210614 23:03:56.257"/>
+</kw>
+<status status="PASS" starttime="20210614 23:03:49.025" endtime="20210614 23:03:56.257"/>
+</kw>
+<kw name="Select Option On Search Bar Dropdown" library="amazon">
+<arg>Pet Supplies</arg>
+<doc>select the option given on the search bar dropdown</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${searchBar_dropdown}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210614 23:03:56.258" endtime="20210614 23:03:56.278"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210614 23:03:58.281" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210614 23:03:56.278" endtime="20210614 23:03:58.281"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${searchBar_dropdown}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210614 23:03:58.281" level="INFO">Clicking element 'xpath=//div[contains(@id, 'nav-search-dropdown-card')]'.</msg>
+<status status="PASS" starttime="20210614 23:03:58.281" endtime="20210614 23:03:58.345"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${dropdown_option}</var>
+<arg>${searchBar_dropdownOptions}</arg>
+<arg>_OPTION_</arg>
+<arg>${option}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20210614 23:03:58.346" level="INFO">${dropdown_option} = xpath=//select[contains(@class, 'av-search-dropdown')]/option[contains(text(), 'Pet Supplies')]</msg>
+<status status="PASS" starttime="20210614 23:03:58.346" endtime="20210614 23:03:58.346"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${dropdown_option}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210614 23:03:58.347" endtime="20210614 23:03:58.363"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${dropdown_option}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210614 23:03:58.363" level="INFO">Clicking element 'xpath=//select[contains(@class, 'av-search-dropdown')]/option[contains(text(), 'Pet Supplies')]'.</msg>
+<status status="PASS" starttime="20210614 23:03:58.363" endtime="20210614 23:03:58.415"/>
+</kw>
+<status status="PASS" starttime="20210614 23:03:56.258" endtime="20210614 23:03:58.415"/>
+</kw>
+<kw name="Input Text In Search Bar" library="amazon">
+<arg>Dog</arg>
+<doc>Input text given in the search bar and verify the page result</doc>
+<kw name="Input Text" library="Selenium2Library">
+<arg>${searchBar}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210614 23:03:58.416" level="INFO">Typing text 'Dog' into text field 'xpath=//input[contains(@id, 'twotabsearchtextbox')]'.</msg>
+<status status="PASS" starttime="20210614 23:03:58.416" endtime="20210614 23:03:58.467"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${searchBar_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210614 23:03:58.468" level="INFO">Clicking element 'xpath=//input[contains(@id, 'nav-search-submit-button')]'.</msg>
+<status status="PASS" starttime="20210614 23:03:58.467" endtime="20210614 23:03:59.647"/>
+</kw>
+<kw name="Title Should Be" library="Selenium2Library">
+<arg>Amazon.com : ${text}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20210614 23:03:59.653" level="INFO">Page title is 'Amazon.com : Dog'.</msg>
+<status status="PASS" starttime="20210614 23:03:59.647" endtime="20210614 23:03:59.653"/>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<arg>${text}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20210614 23:03:59.681" level="INFO">Current page contains text 'Dog'.</msg>
+<status status="PASS" starttime="20210614 23:03:59.653" endtime="20210614 23:03:59.681"/>
+</kw>
+<status status="PASS" starttime="20210614 23:03:58.416" endtime="20210614 23:03:59.681"/>
+</kw>
+<kw name="Click On Sort By Option" library="amazon">
+<arg>Avg. Customer Review</arg>
+<doc>Click the "Sort By" dropdown in the search result page and select the option given</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${searchResult_sortBy_dropdown}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210614 23:03:59.682" endtime="20210614 23:03:59.701"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${searchResult_sortBy_dropdown}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210614 23:03:59.701" level="INFO">Clicking element 'xpath=//span[contains(@class, 'a-dropdown-container')]'.</msg>
+<status status="PASS" starttime="20210614 23:03:59.701" endtime="20210614 23:03:59.755"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${dropdown_option}</var>
+<arg>${searchResult_sortBy_Option}</arg>
+<arg>_OPTION_</arg>
+<arg>${option}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20210614 23:03:59.756" level="INFO">${dropdown_option} = xpath=//a[contains(text (), 'Avg. Customer Review')]</msg>
+<status status="PASS" starttime="20210614 23:03:59.755" endtime="20210614 23:03:59.756"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${dropdown_option}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210614 23:03:59.756" level="INFO">Clicking element 'xpath=//a[contains(text (), 'Avg. Customer Review')]'.</msg>
+<status status="PASS" starttime="20210614 23:03:59.756" endtime="20210614 23:03:59.886"/>
+</kw>
+<status status="PASS" starttime="20210614 23:03:59.682" endtime="20210614 23:03:59.886"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2S</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210614 23:04:01.891" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210614 23:03:59.886" endtime="20210614 23:04:01.891"/>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210614 23:04:01.891" endtime="20210614 23:04:04.054"/>
+</kw>
+<doc>Search by department dropdown and sort the result by the option given</doc>
+<status status="PASS" starttime="20210614 23:03:49.024" endtime="20210614 23:04:04.054"/>
+</test>
+<test id="s1-s1-t3" name="TodaysDealsByDepartment">
+<kw name="Open Amazon" library="amazon">
+<doc>Open amazon web in the chrome browswer and close pop up messages</doc>
+<kw name="Open Browser" library="Selenium2Library">
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20210614 23:04:04.056" level="INFO">Opening browser 'chrome' to base url 'https://www.amazon.com/'.</msg>
+<status status="PASS" starttime="20210614 23:04:04.056" endtime="20210614 23:04:06.130"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210614 23:04:06.130" endtime="20210614 23:04:06.248"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${header}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210614 23:04:06.249" endtime="20210614 23:04:06.282"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210614 23:04:08.285" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210614 23:04:06.282" endtime="20210614 23:04:08.285"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${present}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${popUp_suggestedCountry}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<arg>${popUp_suggestedCountry}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210614 23:04:08.304" level="INFO">Element 'xpath=//div[contains(@class, 'glow-toaster-content')]' is displayed.</msg>
+<status status="PASS" starttime="20210614 23:04:08.285" endtime="20210614 23:04:08.304"/>
+</kw>
+<msg timestamp="20210614 23:04:08.304" level="INFO">${present} = True</msg>
+<status status="PASS" starttime="20210614 23:04:08.285" endtime="20210614 23:04:08.304"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${present}</arg>
+<arg>Click Element</arg>
+<arg>${popUp_suggestedCountry_closeButton}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${popUp_suggestedCountry_closeButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210614 23:04:08.305" level="INFO">Clicking element 'xpath=//span[contains(@class, 'glow-toaster-button-dismiss')]'.</msg>
+<status status="PASS" starttime="20210614 23:04:08.304" endtime="20210614 23:04:08.351"/>
+</kw>
+<status status="PASS" starttime="20210614 23:04:08.304" endtime="20210614 23:04:08.351"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210614 23:04:09.364" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210614 23:04:08.352" endtime="20210614 23:04:09.364"/>
+</kw>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<var>${present}</var>
+<arg>Element Should Be Visible</arg>
+<arg>${navBar_shopInEnglish_button}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<kw name="Element Should Be Visible" library="Selenium2Library">
+<arg>${navBar_shopInEnglish_button}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210614 23:04:09.378" level="INFO">Element 'xpath=//a[contains(text (), 'Click here to shop in English')]' is displayed.</msg>
+<status status="PASS" starttime="20210614 23:04:09.364" endtime="20210614 23:04:09.378"/>
+</kw>
+<msg timestamp="20210614 23:04:09.378" level="INFO">${present} = True</msg>
+<status status="PASS" starttime="20210614 23:04:09.364" endtime="20210614 23:04:09.378"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${present}</arg>
+<arg>Set English Language</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Set English Language" library="amazon">
+<doc>when its true, change the language to English</doc>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${navBar_shopInEnglish_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210614 23:04:09.379" level="INFO">Clicking element 'xpath=//a[contains(text (), 'Click here to shop in English')]'.</msg>
+<status status="PASS" starttime="20210614 23:04:09.378" endtime="20210614 23:04:10.283"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${changeLanguage_englishRadioButton}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210614 23:04:10.283" endtime="20210614 23:04:10.304"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${changeLanguage_englishRadioButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210614 23:04:10.305" level="INFO">Clicking element 'xpath=(//span[contains(@class, 'a-radio-label')])[1]'.</msg>
+<status status="PASS" starttime="20210614 23:04:10.304" endtime="20210614 23:04:10.356"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${changeLanguage_saveButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210614 23:04:10.357" level="INFO">Clicking element 'xpath=//input[contains(@class, 'a-button-input')]'.</msg>
+<status status="PASS" starttime="20210614 23:04:10.356" endtime="20210614 23:04:10.813"/>
+</kw>
+<status status="PASS" starttime="20210614 23:04:09.378" endtime="20210614 23:04:10.813"/>
+</kw>
+<status status="PASS" starttime="20210614 23:04:09.378" endtime="20210614 23:04:10.813"/>
+</kw>
+<status status="PASS" starttime="20210614 23:04:04.056" endtime="20210614 23:04:10.813"/>
+</kw>
+<kw name="Click On Todays Deals Button" library="amazon">
+<doc>clicks the "Today's Deals" option on the main page</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${navBar_todaysDeals_button}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210614 23:04:10.814" endtime="20210614 23:04:10.915"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${navBar_todaysDeals_button}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210614 23:04:10.915" level="INFO">Clicking element 'xpath=(//div[contains(@id, 'nav-xshop')]/a)[1]'.</msg>
+<status status="PASS" starttime="20210614 23:04:10.915" endtime="20210614 23:04:11.668"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${todaysDeals_title}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210614 23:04:11.668" endtime="20210614 23:04:11.715"/>
+</kw>
+<status status="PASS" starttime="20210614 23:04:10.814" endtime="20210614 23:04:11.715"/>
+</kw>
+<kw name="Click Random Department Option" library="amazon">
+<doc>Select one random department on the search result page</doc>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${filterSection_department_seeMore}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210614 23:04:11.716" endtime="20210614 23:04:11.731"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${filterSection_department_seeMore}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210614 23:04:11.732" level="INFO">Clicking element 'xpath=//span[contains(text (), 'See more Department')]'.</msg>
+<status status="PASS" starttime="20210614 23:04:11.731" endtime="20210614 23:04:12.149"/>
+</kw>
+<kw name="Get Element Count" library="Selenium2Library">
+<var>${options}</var>
+<arg>${filterSection_department_options}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20210614 23:04:12.159" level="INFO">${options} = 12</msg>
+<status status="PASS" starttime="20210614 23:04:12.150" endtime="20210614 23:04:12.159"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${random}</var>
+<arg>random.randrange(1, ${options})</arg>
+<arg>random</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20210614 23:04:12.159" level="INFO">${random} = 2</msg>
+<status status="PASS" starttime="20210614 23:04:12.159" endtime="20210614 23:04:12.159"/>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<var>${department_option}</var>
+<arg>${filterSection_department_options}</arg>
+<arg>[${random}]</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20210614 23:04:12.160" level="INFO">${department_option} = xpath=(//div[contains(@class, 'a-expander-inline-container')]/span) [2]</msg>
+<status status="PASS" starttime="20210614 23:04:12.159" endtime="20210614 23:04:12.160"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<arg>${department_option}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210614 23:04:12.160" endtime="20210614 23:04:12.175"/>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<arg>${department_option}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210614 23:04:12.176" level="INFO">Clicking element 'xpath=(//div[contains(@class, 'a-expander-inline-container')]/span) [2]'.</msg>
+<status status="PASS" starttime="20210614 23:04:12.175" endtime="20210614 23:04:12.242"/>
+</kw>
+<status status="PASS" starttime="20210614 23:04:11.716" endtime="20210614 23:04:12.242"/>
+</kw>
+<kw name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20210614 23:04:12.243" endtime="20210614 23:04:14.388"/>
+</kw>
+<doc>Search on "Today's Deals" and select one random department</doc>
+<status status="PASS" starttime="20210614 23:04:04.055" endtime="20210614 23:04:14.388"/>
+</test>
+<status status="PASS" starttime="20210614 23:03:32.353" endtime="20210614 23:04:14.390"/>
+</suite>
+<status status="PASS" starttime="20210614 23:03:32.328" endtime="20210614 23:04:14.392"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="Amazon">Amazon</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s1" name="searchResult">Amazon.searchResult</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
